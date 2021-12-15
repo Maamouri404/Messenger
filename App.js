@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './pages/Home';
+import Login from './pages/Login';
 import Welcome from './pages/Welcome';
 
 const Stack = createNativeStackNavigator();
@@ -11,8 +11,12 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator
+        initialRouteName='Login'
+        headerMode='screen'
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Welcome" component={Welcome} />
       </Stack.Navigator>
     </NavigationContainer>
